@@ -22,6 +22,7 @@ class MemoActivity : AppCompatActivity() {
     lateinit var memoContent : EditText
 
     lateinit var btnToMain : Button
+    lateinit var btnToBack : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +30,8 @@ class MemoActivity : AppCompatActivity() {
         ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.WRITE_EXTERNAL_STORAGE), Context.MODE_PRIVATE)
         memoContent = findViewById(R.id.MemoContent)
 
-        btnToMain = findViewById(R.id.button)
+        btnToMain = findViewById(R.id.Finish_btn)
+        btnToBack = findViewById(R.id.Cancel_btn)
 
         var fileName : String
 
@@ -59,6 +61,10 @@ class MemoActivity : AppCompatActivity() {
             //인텐트 스택 삭제
             intentToMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intentToMain)
+        }
+
+        btnToBack.setOnClickListener{
+            onBackPressed()
         }
 
 
