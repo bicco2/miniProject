@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".memo.MemoActivity"
     android:orientation="vertical"
-
     >
 
 
@@ -29,7 +28,7 @@
             android:gravity="center"
            >
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/DayText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/myfont"
@@ -50,41 +49,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-
-            android:gravity="center">
+            android:gravity="center"
+            android:id="@+id/radio_group">
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/RadioBtn1"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/selector_radio_button_frame1"
-                android:scaleType="fitXY"
-                android:button="@null" />
-
+                android:button="@null"
+                android:onClick="radio_button_click"
+            />
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/RadioBtn2"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:button="@null"
-                android:background="@drawable/selector_radio_button_frame2" />
+                android:background="@drawable/selector_radio_button_frame2"
+                android:onClick="radio_button_click"/>
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/RadioBtn3"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:button="@null"
-                android:background="@drawable/selector_radio_button_frame3" />
+                android:background="@drawable/selector_radio_button_frame3"
+                android:onClick="radio_button_click"/>
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/RadioBtn4"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:layout_margin="10dp"
                 android:button="@null"
-                android:background="@drawable/selector_radio_button_frame4" />
+                android:background="@drawable/selector_radio_button_frame4"
+                android:onClick="radio_button_click"/>
 
 
         </RadioGroup>

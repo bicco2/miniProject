@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     lateinit var calendarRecyclerView: RecyclerView
     lateinit var selectedDate: LocalDate
 
+    val SP_NAME = "memo_sp_storage"
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,6 +130,7 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
 
         //파일 있으면 내용 보여
         if(file1.exists()){
+
             var str_context : String
             val intentToShowMemo = Intent(applicationContext, ShowMemoActivity::class.java)
 
@@ -142,6 +145,12 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
             } catch (e : IOException) {
                 Toast.makeText(this, "error",Toast.LENGTH_SHORT).show()
             }
+
+            //해쉬맵으로 키는 파일이름 밸류는 기분아이디로 설정해서 값 받아온다음에 키, 즉 파일에 해당하는 기분 정보를 넘겨줌
+            //if 이 파일의 기분이 222112313 이면 해당 이미지 출력
+            //Toast.makeText(this, t_hashMap.get(fileName).toString() ,Toast.LENGTH_SHORT).show()
+            intentToShowMemo.putExtra("stateID", readSharedPreference(fileName)) /*송신*/
+
 
             startActivity(intentToShowMemo)
         }
@@ -160,6 +169,12 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
         }
 
 
+    }
+
+
+    fun readSharedPreference(key:String):String{
+        val sp = getSharedPreferences(SP_NAME, Context.MODE_PRIVATE)
+        return sp.getString(key,"")?:""
     }
 
 }
