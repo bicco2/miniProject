@@ -17,12 +17,10 @@ import java.io.IOException
 
 class MemoActivity : AppCompatActivity() {
 
-  //  public var t_hashMap = HashMap<String, Any>()
-
     lateinit var fileName : String
     lateinit var strSDpath :String
     lateinit var myDir :File
-    lateinit var radioBtnID: String
+    var radioBtnID: String? = null
 
     lateinit var memoContent : EditText
 
@@ -44,30 +42,35 @@ class MemoActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_memo)
 
+        //초기 설정 함수
         fileInit()
-
         //완료 눌렀을 때 저장되게 하는 것
         btnToMain.setOnClickListener {
 
-            var file1 = File(strSDpath + "/myDiary/" + fileName)
-            var str = memoContent.text.toString()
-            try {
-                var fos = FileOutputStream(file1)
-                fos.write(str.toByteArray())
-                fos.close()
-                Toast.makeText(applicationContext, "$fileName 이 저장됨", Toast.LENGTH_SHORT).show()
+            if(radioBtnID != null && memoContent.text.toString() != ""){
+                var file1 = File(strSDpath + "/myDiary/" + fileName)
+                var str = memoContent.text.toString()
+                try {
+                    var fos = FileOutputStream(file1)
+                    fos.write(str.toByteArray())
+                    fos.close()
+                    Toast.makeText(applicationContext, "$fileName 이 저장됨", Toast.LENGTH_SHORT).show()
 
-            } catch (e : IOException) {
-                Toast.makeText(this, "에러", Toast.LENGTH_SHORT).show()
+                } catch (e: IOException) {
+                    Toast.makeText(this, "에러", Toast.LENGTH_SHORT).show()
+                }
+
+                writeSharedPrefernce(fileName, radioBtnID!!)
+
+                val intentToMain = Intent(applicationContext, MainActivity::class.java)
+                //인텐트 스택 삭제
+                intentToMain.flags =
+                    Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intentToMain)
             }
-
-            writeSharedPrefernce(fileName, radioBtnID)
-
-
-            val intentToMain = Intent(applicationContext, MainActivity::class.java)
-            //인텐트 스택 삭제
-            intentToMain.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-            startActivity(intentToMain)
+            else{
+                Toast.makeText(this, "모든 항목을 작성해주세요.",Toast.LENGTH_SHORT).show()
+            }
 
         }
 
@@ -75,8 +78,6 @@ class MemoActivity : AppCompatActivity() {
         btnToBack.setOnClickListener{
             onBackPressed()
         }
-
-
 
 
     }
@@ -119,9 +120,6 @@ class MemoActivity : AppCompatActivity() {
 
         dayText.setText(dayTextView)
     }
-//
-//    companion object{
-//        var t_hashMap = HashMap<String, Any>()
-//    }
+
 
 }

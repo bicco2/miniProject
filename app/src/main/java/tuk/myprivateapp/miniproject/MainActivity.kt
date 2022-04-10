@@ -122,13 +122,11 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
                 + dayText.toString() + ".txt")
 
         var strSDpath = Environment.getExternalStorageDirectory().absolutePath
-//        var myDir = File("$strSDpath/mydiary")
-//        myDir.mkdir()
 
 
         var file1 = File(strSDpath + "/myDiary/" + fileName)
 
-        //파일 있으면 내용 보여
+        //파일 있으면 내용 보여줌
         if(file1.exists()){
 
             var str_context : String
@@ -148,9 +146,8 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
 
             //해쉬맵으로 키는 파일이름 밸류는 기분아이디로 설정해서 값 받아온다음에 키, 즉 파일에 해당하는 기분 정보를 넘겨줌
             //if 이 파일의 기분이 222112313 이면 해당 이미지 출력
-            //Toast.makeText(this, t_hashMap.get(fileName).toString() ,Toast.LENGTH_SHORT).show()
+            //Toast.makeText(this, t_hashMap.get(fileName).toString() ,Toast.LENGTH_SHORT).show() //제대로 들어오는지 확인
             intentToShowMemo.putExtra("stateID", readSharedPreference(fileName)) /*송신*/
-
 
             startActivity(intentToShowMemo)
         }
@@ -159,7 +156,7 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
             Toast.makeText(this, message, Toast.LENGTH_LONG).show()
             val intentToMemo = Intent(applicationContext, MemoActivity::class.java)
 
-            //인텐트 스택 삭
+            //인텐트 스택 삭제
             //intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
 
             intentToMemo.putExtra("day", dayText.toString()) /*송신*/
