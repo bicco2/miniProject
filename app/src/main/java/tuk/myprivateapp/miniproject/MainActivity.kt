@@ -33,6 +33,9 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     lateinit var calendarRecyclerView: RecyclerView
     lateinit var selectedDate: LocalDate
 
+    val existFileArr: ArrayList<String> = ArrayList()
+    //lateinit var calendarThing: CalendarViewHolder
+
     val SP_NAME = "memo_sp_storage"
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -73,12 +76,27 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
         val daysInMonth: Int = yearMonth.lengthOfMonth()
         val firstOfMonth: LocalDate = selectedDate.withDayOfMonth(1)
         val dayOfWeek = firstOfMonth.dayOfWeek.value
+        monthYearFromDate(selectedDate)
         for (i in 1..42) {
+            var confrFile = (monthYearFromDate(selectedDate) + "_"
+                    + i.toString() + ".txt")
+
+            var SDpath = Environment.getExternalStorageDirectory().absolutePath
+            var file1 = File(SDpath + "/myDiary/" + confrFile)
+
             if (i <= dayOfWeek || i > daysInMonth + dayOfWeek) {
                 daysInMonthArray.add("")
             } else {
-                daysInMonthArray.add((i - dayOfWeek).toString())
+                if (file1.exists()) {
+                    existFileArr.add(file1.toString())
+
+                    daysInMonthArray.add((i - dayOfWeek).toString())
+                } else {
+                    daysInMonthArray.add((i - dayOfWeek).toString())
+                }
             }
+
+
         }
         return daysInMonthArray
     }

@@ -4,17 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/drawable/btnradius.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.5796875" />
         <entry key="app/src/main/res/drawable/round.xml" value="0.26979166666666665" />
         <entry key="app/src/main/res/drawable/selector_radio_button.xml" value="0.26979166666666665" />
+        <entry key="app/src/main/res/drawable/selector_radio_button_frame1.xml" value="0.5796875" />
         <entry key="app/src/main/res/drawable/selector_radio_button_frame2.xml" value="0.5796875" />
         <entry key="app/src/main/res/drawable/selector_radio_button_frame3.xml" value="0.5796875" />
         <entry key="app/src/main/res/drawable/selector_radio_button_frame4.xml" value="0.5796875" />
+        <entry key="app/src/main/res/drawable/strokewidget.xml" value="0.5796875" />
+        <entry key="app/src/main/res/drawable/strokewidget2.xml" value="0.23645833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.375" />
         <entry key="app/src/main/res/layout/activity_memo.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_memo_pop_up.xml" value="0.5635416666666667" />
         <entry key="app/src/main/res/layout/activity_show_memo.xml" value="0.4361413043478261" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.2740628166160081" />
+        <entry key="app/src/main/res/layout/calendar_cell2.xml" value="0.2740628166160081" />
         <entry key="app/src/main/res/layout/tests.xml" value="0.5635416666666667" />
       </map>
     </option>

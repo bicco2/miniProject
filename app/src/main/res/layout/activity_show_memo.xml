@@ -5,18 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFEF8E"
     tools:context=".memo.ShowMemoActivity">
 
+
     <TextView
-        android:id="@+id/Show_memo_content"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="오늘 운동의 상태는??"
+        android:textSize="20dp"
+        android:fontFamily="@font/myfont"
+        android:layout_margin="20dp"
+        android:layout_gravity="center"/>
 
     <ImageView
         android:id="@+id/StateImg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+
+        app:srcCompat="@drawable/frame1after" />
+
+
+
+    <TextView
+        android:id="@+id/Show_memo_content"
+        android:layout_width="match_parent"
+        android:layout_height="267dp"
+        android:background="@drawable/strokewidget2"
+        android:fontFamily="@font/myfont"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_margin="20dp"
+        android:hint="해야할 일을 적어보세요! " />
+
 
 </LinearLayout>

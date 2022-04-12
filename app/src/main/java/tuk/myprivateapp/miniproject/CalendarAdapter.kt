@@ -7,27 +7,26 @@ import androidx.recyclerview.widget.RecyclerView
 import java.util.ArrayList
 
 //요 안에 뷰 홀더가 들어 있음 뷰홀더는 캐리어의 인터셉터임 따로 뷰홀더를 만들어줄거기 때문에 calendarViewHolder를 만듦
-internal class CalendarAdapter(
-    private val daysOfMonth: ArrayList<String>,
-    private val onItemListener: OnItemListener
-) :
-//만든 캘린더뷰홀더를 가져온거임
-    RecyclerView.Adapter<CalendarViewHolder>() {
+internal class CalendarAdapter(private val daysOfMonth: ArrayList<String>, private val onItemListener: OnItemListener) : RecyclerView.Adapter<CalendarViewHolder>() {
     //뷰 홀더가 생성됐을때
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder {
-
         val inflater = LayoutInflater.from(parent.context)
         //inflater는 레이아웃이랑 뷰를 연결시켜주는 메소드임
         val view: View = inflater.inflate(R.layout.calendar_cell, parent, false)
         //layoutParams는 ㅌㅋ부모 레이아웃 안에서 View(뷰)가 어떻게 배치될지를 정의하는 속성이다.
         val layoutParams = view.layoutParams
         layoutParams.height = (parent.height * 0.166666666).toInt()
+
         return CalendarViewHolder(view, onItemListener)
     }
     //뷰와 뷰홀더가 묶였을 때 , 즉 재활용이 됐을ㄸ ㅐ
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
         //그니까 holder = 켈린더뷰홀더의 dayofMonth를 daysOfMonth[position]로 설정해준다 .
         holder.dayOfMonth.text = daysOfMonth[position]
+        if(daysOfMonth[position] == "1"){
+            holder.dayOfMonth.setBackgroundResource(R.drawable.frame1after)
+        }
+
     }
 
     //목록의 아이템수

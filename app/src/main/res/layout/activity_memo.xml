@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".memo.MemoActivity"
+    android:background="#FFEF8E"
     android:orientation="vertical"
     >
 
@@ -44,12 +45,14 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:gravity="center">
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
+            android:background="@drawable/strokewidget"
             android:id="@+id/radio_group">
 
             <RadioButton
@@ -101,9 +104,11 @@
         android:id="@+id/MemoContent"
         android:layout_width="match_parent"
         android:layout_height="267dp"
-        android:background="@color/gray"
+        android:background="@drawable/strokewidget2"
         android:fontFamily="@font/myfont"
-        android:hint="memoContent입니다. " />
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:hint="해야할 일을 적어보세요! " />
 
 
     <LinearLayout
@@ -117,8 +122,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/black"
-            android:text="완료" />
+            android:backgroundTint="#FFCD2A"
+            android:text="저장" />
 
 
         <Button
@@ -127,7 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="@color/black"
+            android:backgroundTint="#FFCD2A"
             android:text="취소" />
 
     </LinearLayout>

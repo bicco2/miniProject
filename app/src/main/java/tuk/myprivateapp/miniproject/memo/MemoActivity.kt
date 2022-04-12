@@ -55,7 +55,6 @@ class MemoActivity : AppCompatActivity() {
                     fos.write(str.toByteArray())
                     fos.close()
                     Toast.makeText(applicationContext, "$fileName 이 저장됨", Toast.LENGTH_SHORT).show()
-
                 } catch (e: IOException) {
                     Toast.makeText(this, "에러", Toast.LENGTH_SHORT).show()
                 }
