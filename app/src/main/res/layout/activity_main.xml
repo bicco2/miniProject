@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FFEF8E"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,14 +20,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/back"
-            android:textColor="@color/blue"
             android:background="@null"
+            android:textColor="#FFAD0D"
             android:textStyle="bold"
+            android:backgroundTint="#FFCD2A"
             android:onClick="previousMonthAction"
             android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/monthYearTV"
+            android:fontFamily="@font/myfont"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:layout_height="wrap_content"
@@ -40,8 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/forward"
-            android:textColor="@color/blue"
+            android:textColor="#FFAD0D"
             android:background="@null"
+            android:backgroundTint="#FFCD2A"
             android:textStyle="bold"
             android:onClick="nextMonthAction"
             android:textSize="20sp"/>
@@ -51,13 +55,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+     >
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SUN"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -67,6 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="MON"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -76,6 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TUE"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -85,6 +93,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="WED"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -94,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="THU"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -103,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="FRI"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -112,6 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="SAT"
+            android:fontFamily="@font/myfont"
             android:textColor="@color/gray"
             android:textAlignment="center"
             android:textSize="16sp"/>
@@ -123,7 +135,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/calendarRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="370dp" />
+        android:layout_height="370dp"
+        android:fontFamily="@font/myfont"/>
 
     <LinearLayout
         android:layout_width="match_parent"

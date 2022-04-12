@@ -157,6 +157,8 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
                 str_context = txt.toString(Charsets.UTF_8).trim()
                 //메모 내용 넘기기 후에 이미지나 다른 정보들 클래스로 따로 빼서 구조체 만든 다음에 넘기면 될듯?
                 intentToShowMemo.putExtra("memocontext_text", str_context) /*송신*/
+                intentToShowMemo.putExtra("day", dayText.toString()) /*송신*/
+                intentToShowMemo.putExtra("Myear", monthYearFromDate(selectedDate).toString())
                 inFs.close()
             } catch (e : IOException) {
                 Toast.makeText(this, "error",Toast.LENGTH_SHORT).show()

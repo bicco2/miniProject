@@ -8,7 +8,14 @@
     android:background="#FFEF8E"
     tools:context=".memo.ShowMemoActivity">
 
-
+    <TextView
+        android:id="@+id/DayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/myfont"
+        android:text="april 2022 12"
+        android:layout_gravity="right"
+        android:textSize="15sp"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -40,6 +47,15 @@
         android:textSize="20dp"
         android:layout_margin="20dp"
         android:hint="해야할 일을 적어보세요! " />
+
+    <Button
+        android:id="@+id/Cancel_btn"
+        android:fontFamily="@font/myfont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#FFCD2A"
+        android:text="확인" />
 
 
 </LinearLayout>
