@@ -18,8 +18,10 @@
         <entry key="app/src/main/res/layout/activity_memo.xml" value="0.45" />
         <entry key="app/src/main/res/layout/activity_memo_pop_up.xml" value="0.5635416666666667" />
         <entry key="app/src/main/res/layout/activity_show_memo.xml" value="0.4361413043478261" />
+        <entry key="app/src/main/res/layout/activity_show_memo_list.xml" value="0.2203125" />
         <entry key="app/src/main/res/layout/calendar_cell.xml" value="0.2740628166160081" />
         <entry key="app/src/main/res/layout/calendar_cell2.xml" value="0.2740628166160081" />
+        <entry key="app/src/main/res/layout/layout_recycler_item.xml" value="0.19655797101449277" />
         <entry key="app/src/main/res/layout/tests.xml" value="0.5635416666666667" />
       </map>
     </option>

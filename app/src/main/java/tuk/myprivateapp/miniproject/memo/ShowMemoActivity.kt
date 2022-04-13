@@ -26,6 +26,7 @@ class ShowMemoActivity : AppCompatActivity() {
 
         show_memo_content.setText(intent.getStringExtra("memocontext_text").toString())
 
+
         if(intent.getStringExtra("stateID").toString()=="2131231210"){
             stateImg.setImageResource(R.drawable.frame1after)
         }

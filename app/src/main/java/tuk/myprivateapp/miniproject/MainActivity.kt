@@ -2,23 +2,20 @@ package tuk.myprivateapp.miniproject
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.Window
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import tuk.myprivateapp.miniproject.memo.MemoActivity
 import tuk.myprivateapp.miniproject.memo.ShowMemoActivity
+import tuk.myprivateapp.miniproject.memo.ShowMemoListActivity
 import java.io.File
 import java.io.FileInputStream
 import java.io.IOException
@@ -32,9 +29,9 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     lateinit var monthYearText: TextView
     lateinit var calendarRecyclerView: RecyclerView
     lateinit var selectedDate: LocalDate
+    lateinit var fav_btn : FloatingActionButton
 
     val existFileArr: ArrayList<String> = ArrayList()
-    //lateinit var calendarThing: CalendarViewHolder
 
     val SP_NAME = "memo_sp_storage"
 
@@ -46,12 +43,21 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
         initWidgets()
         selectedDate = LocalDate.now()
         setMonthView()
+
+        fav_btn.setOnClickListener {
+            Toast.makeText(this, "플로팅 버튼 클릭", Toast.LENGTH_SHORT).show()
+            val intentToMemoList = Intent(applicationContext, ShowMemoListActivity::class.java)
+            startActivity(intentToMemoList)
+        }
+
+
     }
 
 
     private fun initWidgets() {
         calendarRecyclerView = findViewById(R.id.calendarRecyclerView)
         monthYearText = findViewById(R.id.monthYearTV)
+        fav_btn = findViewById(R.id.fav_btn)
     }
 
     //뷰에 뿌려주는 함수
@@ -130,9 +136,6 @@ class MainActivity : AppCompatActivity(), CalendarAdapter.OnItemListener {
     // daytext가 널이 아니면 선택 메시지를 날림
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onItemClick(position: Int, dayText: String?) { //position 은 달력 내의 인덱스를 말함
-
-
-
 
         var fileName : String
 
